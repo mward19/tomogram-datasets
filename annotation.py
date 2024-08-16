@@ -33,29 +33,3 @@ class AnnotationFile(Annotation):
     
     def mod_shape(mod_path):
         model = ImodModel.from_file(mod_path)
-
-
-#class Annotation:
-#    def __init__(self, filepath, name=None):
-#        self.filepath = filepath
-#        self.points = Annotation.mod_points(filepath)
-#        self.name = "" if name is None else name
-#
-#    def mod_to_pd(filepath):
-#        return imodmodel.read(filepath)
-#
-#    def mod_points(filepath):
-#        # TODO: make this use ImodModel instead of pandas for speeeeeeeed
-#        df = Annotation.mod_to_pd(filepath)
-#        points = []
-#        for _, row in df.iterrows():
-#            # Assumes point is 3D
-#            dim_labels = ['x', 'y', 'z']
-#            point = np.array([row[dim] for dim in dim_labels])
-#            # The annotations seem to have been stored with this indexing. 
-#            dims_order = [2, 1, 0] 
-#            points.append(point[dims_order])
-#        return points
-#    
-#    def mod_shape(mod_path):
-#        model = ImodModel.from_file(mod_path)
