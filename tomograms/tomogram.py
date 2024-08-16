@@ -5,7 +5,7 @@ import mrcfile
 
 import os
 
-from annotation import Annotation
+from .annotation import Annotation
 
 class Tomogram:
     """

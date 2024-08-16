@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: tomograms
+Version: 0.1
+Summary: A package for handling tomograms and related tasks
+Home-page: https://github.com/mward19/tomogram-datasets/blob/master/
+Author: Matthew Ward
+Author-email: matthew.merrill.ward@gmail.com
+Requires-Dist: numpy
+Requires-Dist: scikit-image
+Requires-Dist: mrcfile
+Requires-Dist: imodmodel
+Requires-Dist: pandas

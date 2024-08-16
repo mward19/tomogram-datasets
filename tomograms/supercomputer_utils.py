@@ -1,7 +1,7 @@
 import re
 import os
-from annotation import AnnotationFile
-from tomogram import TomogramFile
+from .annotation import AnnotationFile
+from .tomogram import TomogramFile
 
 def seek_file(directory, regex):
     """ Looks for a file matching `regex` recursively in `directory`."""

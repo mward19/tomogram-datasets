@@ -1,5 +1,5 @@
-from tomogram import Tomogram
-from annotation import Annotation
+from .tomogram import Tomogram
+from .annotation import Annotation
 
 import numpy as np
 
@@ -132,7 +132,7 @@ class SubtomogramGenerator:
 
 
 if __name__ == "__main__":
-    from supercomputer_utils import all_fm_tomograms
+    from .supercomputer_utils import all_fm_tomograms
     from visualize_voxels import visualize
 
     tomos = all_fm_tomograms()
