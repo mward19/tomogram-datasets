@@ -6,8 +6,8 @@ In addition, some files are related to others in complex ways.
 
 These classes and scripts aim to simplify that process for us.
 The three main classes,
- - Tomogram (and its child TomogramFile),
- - Annotation (and its child AnnotationFile), and
+ - Tomogram (and its child class TomogramFile),
+ - Annotation (and its child class AnnotationFile), and
  - Subtomogram
 
 abstractify the data and simplify connections.
