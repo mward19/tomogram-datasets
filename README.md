@@ -6,9 +6,10 @@ In addition, some files are related to others in complex ways.
 
 These classes and scripts aim to simplify that process for us.
 The three main classes,
- - Tomogram (and its child TomogramFile)
- - Annotation (and its child AnnotationFile)
+ - Tomogram (and its child TomogramFile),
+ - Annotation (and its child AnnotationFile), and
  - Subtomogram
+
 abstractify the data and simplify connections.
 
 SubtomogramGenerator generates Subtomograms (sub-volumes within Tomograms) based on Annotation data linked to Tomograms,
