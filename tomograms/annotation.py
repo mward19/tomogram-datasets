@@ -20,13 +20,14 @@ class Annotation:
         self.name = "" if name is None else name
 
 class AnnotationFile(Annotation):
-    """Represents a tomogram file.
+    """Represents a .mod file.
     
     Extends the Annotation class to handle file operations, especially for .mod
     files.
 
     Attributes:
         filepath (str): Filepath of this annotation file
+        df (pandas.DataFrame): DataFrame of this file
     """
     def __init__(self, filepath: str, name: Optional[str] = None):
         """Initializes an AnnotationFile with a .mod file.
@@ -41,7 +42,8 @@ class AnnotationFile(Annotation):
         AnnotationFile.check_mod(filepath)
 
         self.filepath = filepath
-        
+        self.df = AnnotationFile.mod_to_pd(self.filepath)
+
         points = AnnotationFile.mod_points(self.filepath)
         super().__init__(points, name)
     
@@ -96,7 +98,18 @@ class AnnotationFile(Annotation):
             points.append(point[dims_order])
         return points
     
+    def tomogram_shape(self):
+        """Finds the shape of the parent tomogram of this annotation.
+        
+        Returns:
+        numpy.ndarray: Shape of the parent tomogram.
+        """
+        header = ImodModel.from_file(self.filepath).header
+        return np.array([header.zmax, header.xmax, header.ymax])
+
     # TODO
     def mod_shape(mod_path):
         # model = ImodModel.from_file(mod_path)
         pass
+
+    

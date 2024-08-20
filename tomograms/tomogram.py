@@ -6,6 +6,7 @@ import mrcfile
 import os
 
 from .annotation import Annotation
+from .annotation import AnnotationFile
 
 from typing import List, Optional
 
@@ -203,4 +204,36 @@ class TomogramFile(Tomogram):
         self.data = TomogramFile.mrc_to_np(self.filepath)
         return self.data
 
+    def get_shape_from_annotations(self):
+        """
+        Returns the shape of the tomogram without having to load it using the
+        annotations attatched to this tomogram, if any are AnnotationFiles. If
+        no AnnotationFiles are in self.annotations, raises an exception.
+
+        Returns:
+            numpy.ndarray: The shape of the tomogram as inferred from
+            self.annotations.
+
+        Raises:
+            Exception: If no AnnotationFile objects are in self.annotations.
+
+            Exception: If there are multiple AnnotationFile objects in
+            self.annotations and they imply inconsistent shapes.
+        """
+        shapes = []
+        for annotation in self.annotations:
+            if isinstance(annotation, AnnotationFile):
+                shape = annotation.tomogram_shape()
+                shapes.append(shape)
     
+        if len(shapes) == 0:
+            raise Exception("No .mod annotations found. Cannot infer tomogram shape.")
+        elif len(shapes) == 1:
+            return shapes[0]
+        else: # Confirm that all the shapes agree
+            shape = shapes[0]
+            for s in shapes[1:]:
+                if s != shape:
+                    raise Exception(f"Inconsistent tomogram shapes of {shape} and {s} implied by .mod annotations.")
+            return shape
+
