@@ -2,24 +2,89 @@ import imodmodel
 import pandas as pd
 import numpy as np
 
+import os 
+
 from imodmodel import ImodModel
 
+from typing import List, Optional
+
 class Annotation:
-    def __init__(self, points, name=None):
+    """Represents a tomogram annotation.
+
+    Attributes:
+        points (list of numpy.ndarray): Annnotation points
+        name (str): Name of this annotation
+    """
+    def __init__(self, points: List[np.ndarray], name: Optional[str] = None):
         self.points = points
         self.name = "" if name is None else name
 
 class AnnotationFile(Annotation):
-    def __init__(self, filepath, name=None):
+    """Represents a tomogram file.
+    
+    Extends the Annotation class to handle file operations, especially for .mod
+    files.
+
+    Attributes:
+        filepath (str): Filepath of this annotation file
+    """
+    def __init__(self, filepath: str, name: Optional[str] = None):
+        """Initializes an AnnotationFile with a .mod file.
+
+        Args:
+            filepath (str): The filepath of the annotation to load
+            name (str): The name of this annotation
+
+        Raises:
+            IOError: If the file extension is not .mod.
+        """
+        AnnotationFile.check_mod(filepath)
+
         self.filepath = filepath
-        points = AnnotationFile.mod_points(filepath)
+        
+        points = AnnotationFile.mod_points(self.filepath)
         super().__init__(points, name)
     
-    def mod_to_pd(filepath):
-        return imodmodel.read(filepath)
+    @staticmethod
+    def mod_to_pd(filepath: str) -> pd.DataFrame:
+        """Converts a .mod file to a pandas DataFrame.
 
-    def mod_points(filepath):
-        # TODO: make this use ImodModel instead of pandas for speeeeeeeed
+        Args:
+            filepath (str): File to convert
+
+        Returns:
+            pandas.DataFrame: DataFrame of the annotation file.
+
+        Raises:
+            IOError: If the file extension is not .mod.
+        """
+        AnnotationFile.check_mod(filepath)
+        return imodmodel.read(filepath)
+    
+    @staticmethod
+    def check_mod(filepath: str):
+        """Ensures that a filepath is of .mod type.
+
+        Args:
+            filepath (str): Filepath to check.
+
+        Raises:
+            IOError: If the file extension is not .mod.
+        """
+        _, extension = os.path.splitext(filepath)
+        if extension != ".mod":
+            raise IOError("Annotation must be a .mod file.")
+
+    @staticmethod
+    def mod_points(filepath: str) -> List[np.ndarray]:
+        """Reads a .mod file and extracts the points it contains.
+
+        Args:
+            filepath (str)
+        
+        Returns:
+            list of numpy.ndarray: List of points in the annotation file.
+        """
         df = AnnotationFile.mod_to_pd(filepath)
         points = []
         for _, row in df.iterrows():
@@ -31,5 +96,7 @@ class AnnotationFile(Annotation):
             points.append(point[dims_order])
         return points
     
+    # TODO
     def mod_shape(mod_path):
-        model = ImodModel.from_file(mod_path)
+        # model = ImodModel.from_file(mod_path)
+        pass
