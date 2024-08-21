@@ -1,3 +1,7 @@
+"""
+This module provides classes to work with tomogram annotations.
+"""
+
 import imodmodel
 import pandas as pd
 import numpy as np
@@ -9,7 +13,7 @@ from imodmodel import ImodModel
 from typing import List, Optional
 
 class Annotation:
-    """Represents a tomogram annotation.
+    """This class represents a tomogram annotation.
 
     Attributes:
         points (list of numpy.ndarray): Annnotation points
@@ -20,7 +24,7 @@ class Annotation:
         self.name = "" if name is None else name
 
 class AnnotationFile(Annotation):
-    """Represents a .mod file.
+    """This class represents an annotation file.
     
     Extends the Annotation class to handle file operations, especially for .mod
     files.
@@ -55,7 +59,7 @@ class AnnotationFile(Annotation):
             filepath (str): File to convert
 
         Returns:
-            pandas.DataFrame: DataFrame of the annotation file.
+            DataFrame of the annotation file.
 
         Raises:
             IOError: If the file extension is not .mod.
@@ -85,7 +89,7 @@ class AnnotationFile(Annotation):
             filepath (str)
         
         Returns:
-            list of numpy.ndarray: List of points in the annotation file.
+            List of points in the annotation file.
         """
         df = AnnotationFile.mod_to_pd(filepath)
         points = []
@@ -102,7 +106,7 @@ class AnnotationFile(Annotation):
         """Finds the shape of the parent tomogram of this annotation.
         
         Returns:
-        numpy.ndarray: Shape of the parent tomogram.
+            Shape of the parent tomogram.
         """
         header = ImodModel.from_file(self.filepath).header
         return np.array([header.zmax, header.xmax, header.ymax])

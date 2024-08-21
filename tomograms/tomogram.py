@@ -60,7 +60,7 @@ class Tomogram:
                 from all annotations. Defaults to None.
 
         Returns:
-            list: A list of points from the specified annotation or
+            A list of points from the specified annotation or
                 all annotations.
         """
         if annotation_index is not None:
@@ -123,7 +123,7 @@ class TomogramFile(Tomogram):
                 loading. Defaults to True.
 
         Returns:
-            numpy.ndarray: The loaded tomogram data.
+            The loaded tomogram data.
 
         Raises:
             IOError: If the file type is not supported.
@@ -156,7 +156,7 @@ class TomogramFile(Tomogram):
             array (numpy.ndarray): The array to be rescaled.
 
         Returns:
-            numpy.ndarray: The rescaled array.
+            The rescaled array.
         """
         maximum = np.max(array)
         minimum = np.min(array)
@@ -171,20 +171,20 @@ class TomogramFile(Tomogram):
             filepath (str): The file path to the .mrc or .rec file.
 
         Returns:
-            numpy.ndarray: The data loaded as a numpy array.
+            The data loaded as a numpy array.
         """
         with mrcfile.open(filepath, 'r') as mrc:
             data = mrc.data.astype(np.float64)
             return data
 
-    def process(self):
+    def process(self) -> np.ndarray:
         """Process the tomogram to improve contrast using contrast stretching.
 
         This method applies contrast stretching to enhance the visibility
         of features in the tomogram.
         
         Returns:
-            numpy.ndarray: The processed tomogram data.
+            The processed tomogram data.
         """
         # Contrast stretching
         p2, p98 = np.percentile(self.data, (2, 98))
@@ -199,19 +199,19 @@ class TomogramFile(Tomogram):
         from the specified file.
 
         Returns:
-            numpy.ndarray: The reloaded tomogram data.
+            The reloaded tomogram data.
         """
         self.data = TomogramFile.mrc_to_np(self.filepath)
         return self.data
 
-    def get_shape_from_annotations(self):
+    def get_shape_from_annotations(self) -> np.ndarray:
         """
         Returns the shape of the tomogram without having to load it using the
         annotations attatched to this tomogram, if any are AnnotationFiles. If
         no AnnotationFiles are in self.annotations, raises an exception.
 
         Returns:
-            numpy.ndarray: The shape of the tomogram as inferred from
+            The shape of the tomogram as inferred from
             self.annotations.
 
         Raises:

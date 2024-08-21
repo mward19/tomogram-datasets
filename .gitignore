@@ -1,2 +1,3 @@
-tomograms.egg-info
+tomograms.egg-info/
 .gitignore
+__pycache__/

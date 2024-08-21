@@ -1,3 +1,8 @@
+"""
+A collection of utilities for use on BYU's supercomputer.
+"""
+
+
 import re
 import os
 from .annotation import AnnotationFile
@@ -5,131 +10,11 @@ from .tomogram import TomogramFile
 
 from typing import List, Union, Optional
 
-def seek_file(directory: str, regex: List[re.Pattern]) -> Union[str, None]:
-    """Search for a file matching the given regex recursively in the specified
-    directory.
-
-    Args:
-        directory (str): The root directory to start the search. regex
-        (re.Pattern): The regex pattern to match the filenames.
-
-    Returns:
-        str or None: The full path of the matching file, or None if no match is
-        found.
-    """
-    for root, dirs, files in os.walk(directory):
-        for file in files:
-            if regex.match(file):
-                return os.path.join(root, file)
-        for dir in dirs:
-            target = seek_file(dir, regex)
-            if target is not None:
-                return target
-    return None
-
-def seek_dirs(
-            root: str, 
-            regex: re.Pattern, 
-            directories: Optional[List[str]] = None
-        ) -> Union[List[str], None]:
-    """Search for directories matching the given regex recursively within the
-    specified root directory.
-
-    Args:
-        root (str): The root directory to start the search.
-
-        regex (re.Pattern): The regex pattern to match the directory names.
-        
-        directories (list, optional): A list to accumulate matched directories.
-        Should not be set in general usage, as this is used only for internal
-        recursion. Defaults to None.
-
-    Returns:
-        list: A list of paths of matching directories.
-    """
-    if directories is None:
-        directories = []
-    for root, dirs, _ in os.walk(root):
-        for dir in dirs:
-            if regex.match(dir):
-                directories.append(os.path.join(root, dir))
-            else:
-                directories = seek_dirs(dir, regex, directories)
-    return directories
-
-def seek_set(
-            directory: str, 
-            regexes: List[re.Pattern], 
-            matches: List[str] = None
-        ) -> Union[List[str], None]:
-    """Recursively search the specified directory for exactly one match for each regex in the list.
-
-    Args:
-        directory (str): The directory to search.
-
-        regexes (list of re.Pattern): A list of regex patterns to match filenames.
-
-        matches (list, optional): A list to accumulate matches. Should not be
-        set in general usage, as this is used only for internal recursion.
-        Defaults to None.
-
-    Returns:
-        list or None: A list of matching file paths or None if extra matches are found.
-    """
-    if matches is None:
-        matches = [None for _ in regexes]
-
-    for root, dirs, files in os.walk(directory):
-        for file in files:
-            for r_idx, r in enumerate(regexes):
-                if re.match(r, file):
-                    if matches[r_idx] is None:
-                        matches[r_idx] = os.path.join(root, file)
-                    else:
-                        return None  # Extra match found
-    return matches
-
-def seek_annotated_tomos(
-            directories: List[str], 
-            tomo_regex: re.Pattern, 
-            annotation_regexes: List[re.Pattern], 
-            annotation_names: List[str]
-        ) -> List[TomogramFile]:
-    """Collect pairs of tomogram files and their corresponding annotation files.
-
-    Args:
-        directories (list of str): List of directories to search for tomograms
-        and annotations.
-        
-        tomo_regex (re.Pattern): The regex pattern to match tomogram filenames.
-        
-        annotation_regexes (list of re.Pattern): A list of regex patterns to
-        match annotation filenames.
-        
-        annotation_names (list of str): A list of names for the annotations.
-
-    Returns:
-        list of TomogramFile: TomogramFile objects with their corresponding
-        annotations.
-    """
-    tomos = []
-    for dir in directories:
-        matches = seek_set(dir, [tomo_regex] + annotation_regexes)
-        if matches is not None and None not in matches:
-            tomogram_file = matches[0]
-            annotation_files = matches[1:]
-            annotations = []
-            for (file, name) in zip(annotation_files, annotation_names):
-                annotations.append(AnnotationFile(file, name))
-            tomo = TomogramFile(tomogram_file, annotations, load=False)
-            tomos.append(tomo)
-    return tomos
-
 def all_fm_tomograms() -> List[TomogramFile]:
-    """Collect all pairs of .rec tomogram filepaths and flagellar motor .mod filepaths.
+    """Collect all pairs of `.rec` tomogram filepaths and flagellar motor `.mod` filepaths.
 
     Returns:
-        list of TomogramFile: TomogramFile objects with their annotations.
+        TomogramFile objects with their annotations.
     """
     tomograms = []
     
@@ -249,6 +134,128 @@ def all_fm_tomograms() -> List[TomogramFile]:
     tomograms += these_tomograms
     
     return tomograms
+
+def seek_file(directory: str, regex: List[re.Pattern]) -> Union[str, None]:
+    """Search for a file matching the given regex recursively in the specified
+    directory.
+
+    Args:
+        directory (str): The root directory to start the search. regex
+        (re.Pattern): The regex pattern to match the filenames.
+
+    Returns:
+        The full path of the matching file, or None if no match is
+        found.
+    """
+    for root, dirs, files in os.walk(directory):
+        for file in files:
+            if regex.match(file):
+                return os.path.join(root, file)
+        for dir in dirs:
+            target = seek_file(dir, regex)
+            if target is not None:
+                return target
+    return None
+
+def seek_dirs(
+            root: str, 
+            regex: re.Pattern, 
+            directories: Optional[List[str]] = None
+        ) -> Union[List[str], None]:
+    """Search for directories matching the given regex recursively within the
+    specified root directory.
+
+    Args:
+        root (str): The root directory to start the search.
+
+        regex (re.Pattern): The regex pattern to match the directory names.
+        
+        directories (list, optional): A list to accumulate matched directories.
+        Should not be set in general usage, as this is used only for internal
+        recursion. Defaults to None.
+
+    Returns:
+        A list of paths of matching directories.
+    """
+    if directories is None:
+        directories = []
+    for root, dirs, _ in os.walk(root):
+        for dir in dirs:
+            if regex.match(dir):
+                directories.append(os.path.join(root, dir))
+            else:
+                directories = seek_dirs(dir, regex, directories)
+    return directories
+
+def seek_set(
+            directory: str, 
+            regexes: List[re.Pattern], 
+            matches: List[str] = None
+        ) -> Union[List[str], None]:
+    """Recursively search the specified directory for exactly one match for each regex in the list.
+
+    Args:
+        directory (str): The directory to search.
+
+        regexes (list of re.Pattern): A list of regex patterns to match filenames.
+
+        matches (list, optional): A list to accumulate matches. Should not be
+        set in general usage, as this is used only for internal recursion.
+        Defaults to None.
+
+    Returns:
+        A list of matching file paths or None if extra matches are found.
+    """
+    if matches is None:
+        matches = [None for _ in regexes]
+
+    for root, dirs, files in os.walk(directory):
+        for file in files:
+            for r_idx, r in enumerate(regexes):
+                if re.match(r, file):
+                    if matches[r_idx] is None:
+                        matches[r_idx] = os.path.join(root, file)
+                    else:
+                        return None  # Extra match found
+    return matches
+
+def seek_annotated_tomos(
+            directories: List[str], 
+            tomo_regex: re.Pattern, 
+            annotation_regexes: List[re.Pattern], 
+            annotation_names: List[str]
+        ) -> List[TomogramFile]:
+    """Collect pairs of tomogram files and their corresponding annotation files.
+
+    Args:
+        directories (list of str): List of directories to search for tomograms
+        and annotations.
+        
+        tomo_regex (re.Pattern): The regex pattern to match tomogram filenames.
+        
+        annotation_regexes (list of re.Pattern): A list of regex patterns to
+        match annotation filenames.
+        
+        annotation_names (list of str): A list of names for the annotations.
+
+    Returns:
+        TomogramFile objects with their corresponding
+        annotations.
+    """
+    tomos = []
+    for dir in directories:
+        matches = seek_set(dir, [tomo_regex] + annotation_regexes)
+        if matches is not None and None not in matches:
+            tomogram_file = matches[0]
+            annotation_files = matches[1:]
+            annotations = []
+            for (file, name) in zip(annotation_files, annotation_names):
+                annotations.append(AnnotationFile(file, name))
+            tomo = TomogramFile(tomogram_file, annotations, load=False)
+            tomos.append(tomo)
+    return tomos
+
+
 
 if __name__ == "__main__":
     # Run this to see annotations

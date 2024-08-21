@@ -1,0 +1,21 @@
+site_name: tomograms  
+repo_url: https://github.com/mward19/tomograms
+
+docs_dir: 'docs'
+
+nav:
+  - 'index.md'
+  - 'tomogram.md'
+  - 'annotation.md'
+  - 'subtomogram.md'
+  - 'supercomputer_utils.md'
+
+theme: readthedocs
+
+plugins:
+  - mkdocstrings:
+      handlers:
+        python:
+          docstring_style: google
+  - search
+  

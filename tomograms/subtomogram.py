@@ -15,7 +15,7 @@ def in_bounds(shape: np.ndarray, point: np.ndarray) -> bool:
         point to check.
 
     Returns:
-        bool: True if the point is within bounds, False otherwise.
+        True if the point is within bounds, False otherwise.
     """
     for (s, p) in zip(shape, point):
         if p < 0 or p >= s:
@@ -115,7 +115,7 @@ class SubtomogramGenerator:
         self.pads = (8, 32, 32)
         self.gen = np.random.default_rng()
 
-    def set_vol_shape(self, new_vol_shape: tuple[int, int, int]) -> None:
+    def set_vol_shape(self, new_vol_shape: tuple[int, int, int]):
         """ 
         Sets a new volume shape for the generator.
 
@@ -137,7 +137,7 @@ class SubtomogramGenerator:
             subtomogram. Defaults to None.
 
         Returns:
-            Subtomogram: The newly created subtomogram.
+            The newly created subtomogram.
         """
         if point is None:
             # Pick a random annotation point from self.tomogram's annotations
@@ -166,7 +166,7 @@ class SubtomogramGenerator:
         iterations are reached.
 
         Returns:
-            Subtomogram: The newly created subtomogram.
+            The newly created subtomogram.
 
         Raises:
             Exception: If unable to find a valid subtomogram without annotation
@@ -204,7 +204,7 @@ class SubtomogramGenerator:
         Returns a list of points that are present in the annotations.
 
         Returns:
-            List[np.ndarray]: A list of annotation points.
+            A list of annotation points.
         """
         points: List[np.ndarray] = []
         for annotation in self.annotations:
