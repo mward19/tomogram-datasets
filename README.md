@@ -15,3 +15,9 @@ abstractify the data and simplify connections.
 The class SubtomogramGenerator generates Subtomograms (sub-volumes within Tomograms) based on Annotation data linked to Tomograms,
 and can generate both Subtomograms containing Annotations and Subtomograms not containing any annotations.
 This may be very useful in creating our next competition.
+
+# Installation
+Install with pip:
+```shell
+pip install git+https://github.com/mward19/tomograms.git
+```
