@@ -10,7 +10,8 @@ setup(
         'scikit-image',
         'mrcfile',
         'imodmodel',
-        'pandas'
+        'pandas',
+        'cryoet-data-portal'
     ],
     author='Matthew Ward',
     author_email='matthew.merrill.ward@gmail.com',

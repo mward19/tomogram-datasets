@@ -94,7 +94,7 @@ class TomogramFile(Tomogram):
             annotations: 
             Optional[List[Annotation]] = None, 
             *, 
-            load: bool = False
+            load: bool = True
         ):
         """Initialize a TomogramFile instance.
 
@@ -103,14 +103,15 @@ class TomogramFile(Tomogram):
             annotations (list of Annotation, optional): Annotations
                 corresponding to the tomogram. Defaults to None.
             load (bool, optional): Whether to load tomogram array data
-                immediately. Defaults to False.
+                immediately. Defaults to True. If False, use self.load() when
+                ready to load data.
         """
-        if load:
-            self.data = self.load()
-        else:
-            self.data = None
+        self.data = None
         self.annotations = annotations
         self.filepath = filepath
+
+        if load:
+            self.data = self.load()
 
     def load(self, *, preprocess: bool = True):
         """Load the tomogram data from the specified file.
@@ -208,7 +209,8 @@ class TomogramFile(Tomogram):
         """
         Returns the shape of the tomogram without having to load it using the
         annotations attatched to this tomogram, if any are AnnotationFiles. If
-        no AnnotationFiles are in self.annotations, raises an exception.
+        no AnnotationFiles of `.mod` type are in self.annotations, raises an
+        exception.
 
         Returns:
             The shape of the tomogram as inferred from
@@ -222,8 +224,8 @@ class TomogramFile(Tomogram):
         """
         shapes = []
         for annotation in self.annotations:
-            if isinstance(annotation, AnnotationFile):
-                shape = annotation.tomogram_shape()
+            if isinstance(annotation, AnnotationFile) and annotation.extension == ".mod":
+                shape = annotation.tomogram_shape_from_mod()
                 shapes.append(shape)
     
         if len(shapes) == 0:

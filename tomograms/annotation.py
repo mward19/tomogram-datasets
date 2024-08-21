@@ -6,6 +6,8 @@ import imodmodel
 import pandas as pd
 import numpy as np
 
+import json
+
 import os 
 
 from imodmodel import ImodModel
@@ -31,6 +33,7 @@ class AnnotationFile(Annotation):
 
     Attributes:
         filepath (str): Filepath of this annotation file
+        extension (str): File extension of this annotation file
         df (pandas.DataFrame): DataFrame of this file
     """
     def __init__(self, filepath: str, name: Optional[str] = None):
@@ -41,15 +44,33 @@ class AnnotationFile(Annotation):
             name (str): The name of this annotation
 
         Raises:
-            IOError: If the file extension is not .mod.
+            IOError: If the file extension is not .mod or .ndjson.
         """
-        AnnotationFile.check_mod(filepath)
-
         self.filepath = filepath
-        self.df = AnnotationFile.mod_to_pd(self.filepath)
+        _, extension = os.path.splitext(filepath)
+        self.extension = extension
 
-        points = AnnotationFile.mod_points(self.filepath)
+        if self.extension == ".mod":
+            points = AnnotationFile.mod_points(self.filepath)
+        elif self.extension == ".ndjson":
+            points = AnnotationFile.ndjson_points(self.filepath)
+
         super().__init__(points, name)
+
+    @staticmethod
+    def check_ext(filepath: str, ext: str):
+        """Ensures that filepath is of a given type.
+
+        Args:
+            filepath (str): The file to check.
+            ext (str): The desired file extension, i.e., ".mod".
+
+        Raises:
+            IOError: If the file extension is not `ext`.
+        """
+        _, extension = os.path.splitext(filepath)
+        if extension != ext:
+            raise IOError(f"Annotation must be a {ext} file.")
     
     @staticmethod
     def mod_to_pd(filepath: str) -> pd.DataFrame:
@@ -64,22 +85,8 @@ class AnnotationFile(Annotation):
         Raises:
             IOError: If the file extension is not .mod.
         """
-        AnnotationFile.check_mod(filepath)
+        AnnotationFile.check_ext(filepath, ".mod")
         return imodmodel.read(filepath)
-    
-    @staticmethod
-    def check_mod(filepath: str):
-        """Ensures that a filepath is of .mod type.
-
-        Args:
-            filepath (str): Filepath to check.
-
-        Raises:
-            IOError: If the file extension is not .mod.
-        """
-        _, extension = os.path.splitext(filepath)
-        if extension != ".mod":
-            raise IOError("Annotation must be a .mod file.")
 
     @staticmethod
     def mod_points(filepath: str) -> List[np.ndarray]:
@@ -102,18 +109,42 @@ class AnnotationFile(Annotation):
             points.append(point[dims_order])
         return points
     
-    def tomogram_shape(self):
-        """Finds the shape of the parent tomogram of this annotation.
+    @staticmethod
+    def ndjson_points(filepath: str) -> List[np.ndarray]:
+        """Reads a .ndjson annotation file as stored on the CryoET Data Portal
+        and extracts the points it contains.
+
+        Args:
+            filepath (str)
+
+        Returns:
+            List of points in the annotation file.
+        """
+        points = []
+
+        with open(filepath, 'r') as file:
+            for line in file:
+                data = json.loads(line)
+                if data.get("type") == "orientedPoint":
+                    location = data.get("location")
+                    if location:
+                        point = np.array([location["z"], location["x"], location["y"]])
+                        points.append(point)       
+        return points
+    
+    def tomogram_shape_from_mod(self):
+        """
+        Finds the shape of the parent tomogram of this annotation, if this
+        annotation is a `.mod` file.
         
         Returns:
             Shape of the parent tomogram.
+
+        Raises:
+            IOError: If this annotation is not a .mod file.
         """
+        AnnotationFile.check_ext(self.filepath, ".mod")
         header = ImodModel.from_file(self.filepath).header
         return np.array([header.zmax, header.xmax, header.ymax])
-
-    # TODO
-    def mod_shape(mod_path):
-        # model = ImodModel.from_file(mod_path)
-        pass
 
     
