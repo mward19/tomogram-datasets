@@ -12,4 +12,4 @@ pip install git+https://github.com/mward19/tomograms.git
 ```
 
 ## Documentation
-Read the documentation at [](https://mward19.github.io/tomograms/)
+Read the documentation at [mward19.github.io/tomograms](https://mward19.github.io/tomograms/).
