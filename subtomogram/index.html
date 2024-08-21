@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Subtomogram - tomograms</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Subtomogram";
+        var mkdocs_page_input_path = "subtomogram.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> tomograms
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">tomograms</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../tomogram/">Tomogram</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../annotation/">Annotation</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Subtomogram</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../supercomputer_utils/">Supercomputer utils</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">tomograms</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Subtomogram</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/mward19/tomograms/edit/master/docs/subtomogram.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="doc doc-object doc-module">
+
+
+
+<a id="tomograms.subtomogram"></a>
+    <div class="doc doc-contents first">
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="tomograms.subtomogram.Subtomogram" class="doc doc-heading">
+            <code>Subtomogram</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="tomograms.tomogram.Tomogram" href="../tomogram/#tomograms.tomogram.Tomogram">Tomogram</a></code></p>
+
+
+      <p>A class representing a subtomogram extracted from a parent tomogram.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Attributes:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>parent_tomogram</code></b>
+                  (<code><a class="autorefs autorefs-internal" title="tomograms.tomogram.Tomogram" href="../tomogram/#tomograms.tomogram.Tomogram">Tomogram</a></code>)
+              –
+              <div class="doc-md-description">
+                <p>The tomogram from which this subtomogram was</p>
+              </div>
+            </li>
+            <li>
+              <b><code>lower_bounds</code></b>
+                  (<code><span title="numpy.ndarray">ndarray</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>The lower bounds of the subtomogram as they</p>
+              </div>
+            </li>
+            <li>
+              <b><code>data</code></b>
+                  (<code><span title="numpy.ndarray">ndarray</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>The 3D data of the subtomogram.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>shape</code></b>
+                  (<code><span title="numpy.ndarray">ndarray</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>The shape of the subtomogram.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+              <details class="quote">
+                <summary>Source code in <code>tomograms/subtomogram.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Subtomogram</span><span class="p">(</span><span class="n">Tomogram</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    A class representing a subtomogram extracted from a parent tomogram.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        parent_tomogram (Tomogram): The tomogram from which this subtomogram was</span>
+<span class="sd">        created.</span>
+
+<span class="sd">        lower_bounds (np.ndarray): The lower bounds of the subtomogram as they</span>
+<span class="sd">        would be indexed in the parent tomogram.</span>
+
+<span class="sd">        data (np.ndarray): The 3D data of the subtomogram.</span>
+
+<span class="sd">        shape (np.ndarray): The shape of the subtomogram.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent_tomogram</span><span class="p">:</span> <span class="s1">&#39;Tomogram&#39;</span><span class="p">,</span> <span class="n">lower_bounds</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">shape</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">        Initializes a Subtomogram instance.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            parent_tomogram (Tomogram): The parent tomogram.</span>
+
+<span class="sd">            lower_bounds (np.ndarray): The lower bounds for the subtomogram.</span>
+
+<span class="sd">            shape (np.ndarray): The shape of the subtomogram.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parent_tomogram</span> <span class="o">=</span> <span class="n">parent_tomogram</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lower_bounds</span> <span class="o">=</span> <span class="n">lower_bounds</span>
+
+        <span class="c1"># Modify annotations from the parent tomogram to match this tomogram</span>
+        <span class="n">new_annotations</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Annotation</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">parent_annotation</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_tomogram</span><span class="o">.</span><span class="n">annotations</span><span class="p">:</span>
+            <span class="n">new_points</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="c1"># Offset original points for this new subtomogram</span>
+            <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">parent_annotation</span><span class="o">.</span><span class="n">points</span><span class="p">:</span>
+                <span class="n">new_point</span> <span class="o">=</span> <span class="n">point</span> <span class="o">-</span> <span class="n">lower_bounds</span>
+                <span class="c1"># Check if new_point is even in the new tomogram</span>
+                <span class="k">if</span> <span class="n">in_bounds</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">new_point</span><span class="p">):</span>
+                    <span class="n">new_points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_point</span><span class="p">)</span>
+                <span class="c1"># Otherwise continue</span>
+            <span class="c1"># Add the annotation only if there are points in it</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_points</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">new_annotations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Annotation</span><span class="p">(</span>
+                    <span class="n">new_points</span><span class="p">,</span>
+                    <span class="n">parent_annotation</span><span class="o">.</span><span class="n">name</span>
+                <span class="p">))</span>
+
+        <span class="c1"># Get subvolume data using lower bounds and shape</span>
+        <span class="n">min_0</span><span class="p">,</span> <span class="n">min_1</span><span class="p">,</span> <span class="n">min_2</span> <span class="o">=</span> <span class="n">lower_bounds</span>
+        <span class="n">shape_0</span><span class="p">,</span> <span class="n">shape_1</span><span class="p">,</span> <span class="n">shape_2</span> <span class="o">=</span> <span class="n">shape</span>
+        <span class="n">new_data</span> <span class="o">=</span> <span class="n">parent_tomogram</span><span class="o">.</span><span class="n">data</span><span class="p">[</span>
+            <span class="n">min_0</span> <span class="p">:</span> <span class="n">min_0</span> <span class="o">+</span> <span class="n">shape_0</span><span class="p">,</span>
+            <span class="n">min_1</span> <span class="p">:</span> <span class="n">min_1</span> <span class="o">+</span> <span class="n">shape_1</span><span class="p">,</span>
+            <span class="n">min_2</span> <span class="p">:</span> <span class="n">min_2</span> <span class="o">+</span> <span class="n">shape_2</span>
+        <span class="p">]</span>
+
+        <span class="c1"># Initialize this new Tomogram</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">new_data</span><span class="p">,</span> <span class="n">new_annotations</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="tomograms.subtomogram.Subtomogram.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">parent_tomogram</span><span class="p">,</span> <span class="n">lower_bounds</span><span class="p">,</span> <span class="n">shape</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Initializes a Subtomogram instance.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>parent_tomogram</code></b>
+                  (<code><a class="autorefs autorefs-internal" title="tomograms.tomogram.Tomogram" href="../tomogram/#tomograms.tomogram.Tomogram">Tomogram</a></code>)
+              –
+              <div class="doc-md-description">
+                <p>The parent tomogram.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>lower_bounds</code></b>
+                  (<code><span title="numpy.ndarray">ndarray</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>The lower bounds for the subtomogram.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>shape</code></b>
+                  (<code><span title="numpy.ndarray">ndarray</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>The shape of the subtomogram.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+            <details class="quote">
+              <summary>Source code in <code>tomograms/subtomogram.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent_tomogram</span><span class="p">:</span> <span class="s1">&#39;Tomogram&#39;</span><span class="p">,</span> <span class="n">lower_bounds</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">shape</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Initializes a Subtomogram instance.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        parent_tomogram (Tomogram): The parent tomogram.</span>
+
+<span class="sd">        lower_bounds (np.ndarray): The lower bounds for the subtomogram.</span>
+
+<span class="sd">        shape (np.ndarray): The shape of the subtomogram.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">parent_tomogram</span> <span class="o">=</span> <span class="n">parent_tomogram</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">lower_bounds</span> <span class="o">=</span> <span class="n">lower_bounds</span>
+
+    <span class="c1"># Modify annotations from the parent tomogram to match this tomogram</span>
+    <span class="n">new_annotations</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Annotation</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">parent_annotation</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_tomogram</span><span class="o">.</span><span class="n">annotations</span><span class="p">:</span>
+        <span class="n">new_points</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># Offset original points for this new subtomogram</span>
+        <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">parent_annotation</span><span class="o">.</span><span class="n">points</span><span class="p">:</span>
+            <span class="n">new_point</span> <span class="o">=</span> <span class="n">point</span> <span class="o">-</span> <span class="n">lower_bounds</span>
+            <span class="c1"># Check if new_point is even in the new tomogram</span>
+            <span class="k">if</span> <span class="n">in_bounds</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">new_point</span><span class="p">):</span>
+                <span class="n">new_points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_point</span><span class="p">)</span>
+            <span class="c1"># Otherwise continue</span>
+        <span class="c1"># Add the annotation only if there are points in it</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_points</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">new_annotations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Annotation</span><span class="p">(</span>
+                <span class="n">new_points</span><span class="p">,</span>
+                <span class="n">parent_annotation</span><span class="o">.</span><span class="n">name</span>
+            <span class="p">))</span>
+
+    <span class="c1"># Get subvolume data using lower bounds and shape</span>
+    <span class="n">min_0</span><span class="p">,</span> <span class="n">min_1</span><span class="p">,</span> <span class="n">min_2</span> <span class="o">=</span> <span class="n">lower_bounds</span>
+    <span class="n">shape_0</span><span class="p">,</span> <span class="n">shape_1</span><span class="p">,</span> <span class="n">shape_2</span> <span class="o">=</span> <span class="n">shape</span>
+    <span class="n">new_data</span> <span class="o">=</span> <span class="n">parent_tomogram</span><span class="o">.</span><span class="n">data</span><span class="p">[</span>
+        <span class="n">min_0</span> <span class="p">:</span> <span class="n">min_0</span> <span class="o">+</span> <span class="n">shape_0</span><span class="p">,</span>
+        <span class="n">min_1</span> <span class="p">:</span> <span class="n">min_1</span> <span class="o">+</span> <span class="n">shape_1</span><span class="p">,</span>
+        <span class="n">min_2</span> <span class="p">:</span> <span class="n">min_2</span> <span class="o">+</span> <span class="n">shape_2</span>
+    <span class="p">]</span>
+
+    <span class="c1"># Initialize this new Tomogram</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">new_data</span><span class="p">,</span> <span class="n">new_annotations</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="tomograms.subtomogram.SubtomogramGenerator" class="doc doc-heading">
+            <code>SubtomogramGenerator</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+
+      <p>A class for generating subtomograms from a parent tomogram.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Attributes:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>tomogram</code></b>
+                  (<code><a class="autorefs autorefs-internal" title="tomograms.tomogram.Tomogram" href="../tomogram/#tomograms.tomogram.Tomogram">Tomogram</a></code>)
+              –
+              <div class="doc-md-description">
+                <p>The parent tomogram to sample from.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>annotations</code></b>
+                  (<code><span title="typing.List">List</span>[<a class="autorefs autorefs-internal" title="tomograms.annotation.Annotation" href="../annotation/#tomograms.annotation.Annotation">Annotation</a>]</code>)
+              –
+              <div class="doc-md-description">
+                <p>The annotations from the parent</p>
+              </div>
+            </li>
+            <li>
+              <b><code>vol_shape</code></b>
+                  (<code>Tuple[int, int, int]</code>)
+              –
+              <div class="doc-md-description">
+                <p>The shape of the volumes to be</p>
+              </div>
+            </li>
+            <li>
+              <b><code>pads</code></b>
+                  (<code>Tuple[int, int, int]</code>)
+              –
+              <div class="doc-md-description">
+                <p>The padding to apply to the boundaries.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>gen</code></b>
+                  (<code><span title="numpy.random.Generator">Generator</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>Random number generator for sampling.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+              <details class="quote">
+                <summary>Source code in <code>tomograms/subtomogram.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">SubtomogramGenerator</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    A class for generating subtomograms from a parent tomogram.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        tomogram (Tomogram): The parent tomogram to sample from.</span>
+
+<span class="sd">        annotations (List[Annotation]): The annotations from the parent</span>
+<span class="sd">        tomogram.</span>
+
+<span class="sd">        vol_shape (Tuple[int, int, int]): The shape of the volumes to be</span>
+<span class="sd">        generated.</span>
+
+<span class="sd">        pads (Tuple[int, int, int]): The padding to apply to the boundaries.</span>
+
+<span class="sd">        gen (np.random.Generator): Random number generator for sampling.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tomogram</span><span class="p">:</span> <span class="s1">&#39;Tomogram&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">        Initializes a SubtomogramGenerator instance.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            tomogram (Tomogram): The parent tomogram to sample from.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tomogram</span> <span class="o">=</span> <span class="n">tomogram</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tomogram</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">annotations</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tomogram</span><span class="o">.</span><span class="n">annotations</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vol_shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pads</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">set_vol_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_vol_shape</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">        Sets a new volume shape for the generator.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            new_vol_shape (tuple[int, int, int]): The new volume shape.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vol_shape</span> <span class="o">=</span> <span class="n">new_vol_shape</span>
+
+    <span class="k">def</span> <span class="nf">positive_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Subtomogram</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">        Returns a random subtomogram containing the specified point.</span>
+
+<span class="sd">        The point will not be closer than `pads` voxels to the respective</span>
+<span class="sd">        borders. If no point is given, a random annotation point from</span>
+<span class="sd">        self.tomogram&#39;s annotations is selected.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            point (Optional[np.ndarray]): The point to include in the</span>
+<span class="sd">            subtomogram. Defaults to None.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The newly created subtomogram.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">point</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># Pick a random annotation point from self.tomogram&#39;s annotations</span>
+            <span class="n">annotation</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">annotations</span><span class="p">)</span>
+            <span class="n">point</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">annotation</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
+
+        <span class="n">possible_lower_bounds</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span>
+                                        <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pt</span> <span class="o">-</span> <span class="n">vs</span> <span class="o">+</span> <span class="n">pad</span><span class="p">),</span>
+                                        <span class="nb">min</span><span class="p">(</span><span class="n">ts</span> <span class="o">-</span> <span class="n">vs</span><span class="p">,</span> <span class="n">pt</span> <span class="o">-</span> <span class="n">pad</span><span class="p">),</span>
+                                        <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                        <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span>
+                                    <span class="p">)</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">vs</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">pad</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tomogram</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vol_shape</span><span class="p">,</span> <span class="n">point</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pads</span><span class="p">)]</span>
+
+        <span class="n">lower_bounds</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">lb</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">for</span> <span class="n">lb</span> <span class="ow">in</span> <span class="n">possible_lower_bounds</span><span class="p">]</span>
+
+        <span class="c1"># Construct a new Tomogram with modified annotations</span>
+        <span class="k">return</span> <span class="n">Subtomogram</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tomogram</span><span class="p">,</span> <span class="n">lower_bounds</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vol_shape</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">negative_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Subtomogram</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">        Returns a random subtomogram that does not contain any points from the</span>
+<span class="sd">        annotations.</span>
+
+<span class="sd">        This process continues until a valid subtomogram is found or the maximum</span>
+<span class="sd">        iterations are reached.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The newly created subtomogram.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            Exception: If unable to find a valid subtomogram without annotation</span>
+<span class="sd">            points after 1000 attempts.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Generate completely random bounds until one has no annotations</span>
+        <span class="n">maxiter</span> <span class="o">=</span> <span class="mi">1000</span>
+        <span class="k">for</span> <span class="nb">iter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">maxiter</span><span class="p">):</span>
+            <span class="n">possible_lower_bounds</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span>
+                                            <span class="mi">0</span><span class="p">,</span>
+                                            <span class="n">ts</span> <span class="o">-</span> <span class="n">vs</span><span class="p">,</span>
+                                            <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                            <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span>
+                                        <span class="p">)</span>
+                            <span class="k">for</span> <span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">vs</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tomogram</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vol_shape</span><span class="p">)]</span>
+
+            <span class="n">lower_bounds</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">lb</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                                <span class="k">for</span> <span class="n">lb</span> <span class="ow">in</span> <span class="n">possible_lower_bounds</span><span class="p">]</span>
+
+            <span class="c1"># Check if this volume contains any annotation points</span>
+            <span class="n">contains_annotation</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tomogram</span><span class="o">.</span><span class="n">annotation_points</span><span class="p">():</span>
+                <span class="n">new_point</span> <span class="o">=</span> <span class="n">point</span> <span class="o">-</span> <span class="n">lower_bounds</span>
+                <span class="k">if</span> <span class="n">in_bounds</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vol_shape</span><span class="p">,</span> <span class="n">new_point</span><span class="p">):</span>
+                    <span class="n">contains_annotation</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="k">break</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">contains_annotation</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">Subtomogram</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tomogram</span><span class="p">,</span> <span class="n">lower_bounds</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vol_shape</span><span class="p">)</span>
+
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Failed to find a volume without an annotation&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">find_annotation_points</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">        Returns a list of points that are present in the annotations.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A list of annotation points.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">points</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">annotation</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">annotations</span><span class="p">:</span>
+            <span class="n">points</span> <span class="o">+=</span> <span class="n">annotation</span><span class="o">.</span><span class="n">points</span>
+        <span class="k">return</span> <span class="n">points</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="tomograms.subtomogram.SubtomogramGenerator.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">tomogram</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Initializes a SubtomogramGenerator instance.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>tomogram</code></b>
+                  (<code><a class="autorefs autorefs-internal" title="tomograms.tomogram.Tomogram" href="../tomogram/#tomograms.tomogram.Tomogram">Tomogram</a></code>)
+              –
+              <div class="doc-md-description">
+                <p>The parent tomogram to sample from.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+            <details class="quote">
+              <summary>Source code in <code>tomograms/subtomogram.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tomogram</span><span class="p">:</span> <span class="s1">&#39;Tomogram&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Initializes a SubtomogramGenerator instance.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        tomogram (Tomogram): The parent tomogram to sample from.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">tomogram</span> <span class="o">=</span> <span class="n">tomogram</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">tomogram</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">annotations</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tomogram</span><span class="o">.</span><span class="n">annotations</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">vol_shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">pads</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">gen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="tomograms.subtomogram.SubtomogramGenerator.find_annotation_points" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">find_annotation_points</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Returns a list of points that are present in the annotations.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><span title="typing.List">List</span>[<span title="numpy.ndarray">ndarray</span>]</code>
+              –
+              <div class="doc-md-description">
+                <p>A list of annotation points.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+            <details class="quote">
+              <summary>Source code in <code>tomograms/subtomogram.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">find_annotation_points</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Returns a list of points that are present in the annotations.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A list of annotation points.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">points</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">annotation</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">annotations</span><span class="p">:</span>
+        <span class="n">points</span> <span class="o">+=</span> <span class="n">annotation</span><span class="o">.</span><span class="n">points</span>
+    <span class="k">return</span> <span class="n">points</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="tomograms.subtomogram.SubtomogramGenerator.negative_sample" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">negative_sample</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Returns a random subtomogram that does not contain any points from the
+annotations.</p>
+<p>This process continues until a valid subtomogram is found or the maximum
+iterations are reached.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><a class="autorefs autorefs-internal" title="tomograms.subtomogram.Subtomogram" href="#tomograms.subtomogram.Subtomogram">Subtomogram</a></code>
+              –
+              <div class="doc-md-description">
+                <p>The newly created subtomogram.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Raises:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code>Exception</code>
+              –
+              <div class="doc-md-description">
+                <p>If unable to find a valid subtomogram without annotation</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+            <details class="quote">
+              <summary>Source code in <code>tomograms/subtomogram.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">negative_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Subtomogram</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Returns a random subtomogram that does not contain any points from the</span>
+<span class="sd">    annotations.</span>
+
+<span class="sd">    This process continues until a valid subtomogram is found or the maximum</span>
+<span class="sd">    iterations are reached.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The newly created subtomogram.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        Exception: If unable to find a valid subtomogram without annotation</span>
+<span class="sd">        points after 1000 attempts.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Generate completely random bounds until one has no annotations</span>
+    <span class="n">maxiter</span> <span class="o">=</span> <span class="mi">1000</span>
+    <span class="k">for</span> <span class="nb">iter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">maxiter</span><span class="p">):</span>
+        <span class="n">possible_lower_bounds</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span>
+                                        <span class="mi">0</span><span class="p">,</span>
+                                        <span class="n">ts</span> <span class="o">-</span> <span class="n">vs</span><span class="p">,</span>
+                                        <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                        <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span>
+                                    <span class="p">)</span>
+                        <span class="k">for</span> <span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">vs</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tomogram</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vol_shape</span><span class="p">)]</span>
+
+        <span class="n">lower_bounds</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">lb</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                            <span class="k">for</span> <span class="n">lb</span> <span class="ow">in</span> <span class="n">possible_lower_bounds</span><span class="p">]</span>
+
+        <span class="c1"># Check if this volume contains any annotation points</span>
+        <span class="n">contains_annotation</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tomogram</span><span class="o">.</span><span class="n">annotation_points</span><span class="p">():</span>
+            <span class="n">new_point</span> <span class="o">=</span> <span class="n">point</span> <span class="o">-</span> <span class="n">lower_bounds</span>
+            <span class="k">if</span> <span class="n">in_bounds</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vol_shape</span><span class="p">,</span> <span class="n">new_point</span><span class="p">):</span>
+                <span class="n">contains_annotation</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">break</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">contains_annotation</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Subtomogram</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tomogram</span><span class="p">,</span> <span class="n">lower_bounds</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vol_shape</span><span class="p">)</span>
+
+    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Failed to find a volume without an annotation&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="tomograms.subtomogram.SubtomogramGenerator.positive_sample" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">positive_sample</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Returns a random subtomogram containing the specified point.</p>
+<p>The point will not be closer than <code>pads</code> voxels to the respective
+borders. If no point is given, a random annotation point from
+self.tomogram's annotations is selected.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>point</code></b>
+                  (<code><span title="typing.Optional">Optional</span>[<span title="numpy.ndarray">ndarray</span>]</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>The point to include in the</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><a class="autorefs autorefs-internal" title="tomograms.subtomogram.Subtomogram" href="#tomograms.subtomogram.Subtomogram">Subtomogram</a></code>
+              –
+              <div class="doc-md-description">
+                <p>The newly created subtomogram.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+            <details class="quote">
+              <summary>Source code in <code>tomograms/subtomogram.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">positive_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Subtomogram</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Returns a random subtomogram containing the specified point.</span>
+
+<span class="sd">    The point will not be closer than `pads` voxels to the respective</span>
+<span class="sd">    borders. If no point is given, a random annotation point from</span>
+<span class="sd">    self.tomogram&#39;s annotations is selected.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        point (Optional[np.ndarray]): The point to include in the</span>
+<span class="sd">        subtomogram. Defaults to None.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The newly created subtomogram.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">point</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># Pick a random annotation point from self.tomogram&#39;s annotations</span>
+        <span class="n">annotation</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">annotations</span><span class="p">)</span>
+        <span class="n">point</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">annotation</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
+
+    <span class="n">possible_lower_bounds</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span>
+                                    <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pt</span> <span class="o">-</span> <span class="n">vs</span> <span class="o">+</span> <span class="n">pad</span><span class="p">),</span>
+                                    <span class="nb">min</span><span class="p">(</span><span class="n">ts</span> <span class="o">-</span> <span class="n">vs</span><span class="p">,</span> <span class="n">pt</span> <span class="o">-</span> <span class="n">pad</span><span class="p">),</span>
+                                    <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                    <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span>
+                                <span class="p">)</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">vs</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">pad</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tomogram</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vol_shape</span><span class="p">,</span> <span class="n">point</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pads</span><span class="p">)]</span>
+
+    <span class="n">lower_bounds</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">lb</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">for</span> <span class="n">lb</span> <span class="ow">in</span> <span class="n">possible_lower_bounds</span><span class="p">]</span>
+
+    <span class="c1"># Construct a new Tomogram with modified annotations</span>
+    <span class="k">return</span> <span class="n">Subtomogram</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tomogram</span><span class="p">,</span> <span class="n">lower_bounds</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vol_shape</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="tomograms.subtomogram.SubtomogramGenerator.set_vol_shape" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">set_vol_shape</span><span class="p">(</span><span class="n">new_vol_shape</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Sets a new volume shape for the generator.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>new_vol_shape</code></b>
+                  (<code>tuple[int, int, int]</code>)
+              –
+              <div class="doc-md-description">
+                <p>The new volume shape.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+            <details class="quote">
+              <summary>Source code in <code>tomograms/subtomogram.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">set_vol_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_vol_shape</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Sets a new volume shape for the generator.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        new_vol_shape (tuple[int, int, int]): The new volume shape.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">vol_shape</span> <span class="o">=</span> <span class="n">new_vol_shape</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="tomograms.subtomogram.in_bounds" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">in_bounds</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">point</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Checks if the <code>point</code> is within the bounds of an array with the given
+<code>shape</code>.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>shape</code></b>
+                  (<code><span title="numpy.ndarray">ndarray</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>The shape of the array. point (np.ndarray): The</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code>bool</code>
+              –
+              <div class="doc-md-description">
+                <p>True if the point is within bounds, False otherwise.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+            <details class="quote">
+              <summary>Source code in <code>tomograms/subtomogram.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">in_bounds</span><span class="p">(</span><span class="n">shape</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">point</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Checks if the `point` is within the bounds of an array with the given</span>
+<span class="sd">    `shape`.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        shape (np.ndarray): The shape of the array. point (np.ndarray): The</span>
+<span class="sd">        point to check.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        True if the point is within bounds, False otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">point</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">p</span> <span class="o">&gt;=</span> <span class="n">s</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../annotation/" class="btn btn-neutral float-left" title="Annotation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../supercomputer_utils/" class="btn btn-neutral float-right" title="Supercomputer utils">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/mward19/tomograms" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../annotation/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../supercomputer_utils/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
