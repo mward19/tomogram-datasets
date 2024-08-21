@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Supercomputer utils - tomograms</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Supercomputer utils";
+        var mkdocs_page_input_path = "supercomputer_utils.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> tomograms
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">tomograms</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../tomogram/">Tomogram</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../annotation/">Annotation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../subtomogram/">Subtomogram</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Supercomputer utils</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">tomograms</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Supercomputer utils</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/mward19/tomograms/edit/master/docs/supercomputer_utils.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="doc doc-object doc-module">
+
+
+
+<a id="tomograms.supercomputer_utils"></a>
+    <div class="doc doc-contents first">
+
+      <p>A collection of utilities for use on BYU's supercomputer.</p>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="tomograms.supercomputer_utils.all_fm_tomograms" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">all_fm_tomograms</span><span class="p">()</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Collect all pairs of <code>.rec</code> tomogram filepaths and flagellar motor <code>.mod</code> filepaths.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><span title="typing.List">List</span>[<a class="autorefs autorefs-internal" title="tomograms.tomogram.TomogramFile" href="../tomogram/#tomograms.tomogram.TomogramFile">TomogramFile</a>]</code>
+              –
+              <div class="doc-md-description">
+                <p>TomogramFile objects with their annotations.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+            <details class="quote">
+              <summary>Source code in <code>tomograms/supercomputer_utils.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">all_fm_tomograms</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">TomogramFile</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Collect all pairs of `.rec` tomogram filepaths and flagellar motor `.mod` filepaths.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        TomogramFile objects with their annotations.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">tomograms</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># ~~~ DRIVE 1 ~~~ #</span>
+    <span class="c1"># Hylemonella</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/grphome/grp_tomo_db1_d1/nobackup/archive/TomoDB1_d1/FlagellarMotor_P1/Hylemonella gracilis&quot;</span>
+    <span class="n">dir_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;yc\d</span><span class="si">{4}</span><span class="s2">.*&quot;</span><span class="p">)</span>
+    <span class="n">directories</span> <span class="o">=</span> <span class="n">seek_dirs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">dir_regex</span><span class="p">)</span>
+
+    <span class="n">flagellum_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^fm.mod$&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
+    <span class="n">tomogram_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;.*\.rec$&quot;</span><span class="p">)</span>
+
+    <span class="n">these_tomograms</span> <span class="o">=</span> <span class="n">seek_annotated_tomos</span><span class="p">(</span>
+        <span class="n">directories</span><span class="p">,</span> 
+        <span class="n">tomogram_regex</span><span class="p">,</span> 
+        <span class="p">[</span><span class="n">flagellum_regex</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s2">&quot;Flagellar Motor&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">tomograms</span> <span class="o">+=</span> <span class="n">these_tomograms</span>
+
+    <span class="c1"># ~~~ DRIVE 2 ~~~ #</span>
+    <span class="c1"># Legionella</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/grphome/grp_tomo_db1_d2/nobackup/archive/TomoDB1_d2/FlagellarMotor_P2/legionella&quot;</span>
+    <span class="n">dir_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;dg\d</span><span class="si">{4}</span><span class="s2">.*&quot;</span><span class="p">)</span>
+    <span class="n">directories</span> <span class="o">=</span> <span class="n">seek_dirs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">dir_regex</span><span class="p">)</span>
+
+    <span class="n">flagellum_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^FM\.mod$&quot;</span><span class="p">)</span>
+    <span class="n">tomogram_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;.*SIRT_1k\.rec$&quot;</span><span class="p">)</span>
+
+    <span class="n">these_tomograms</span> <span class="o">=</span> <span class="n">seek_annotated_tomos</span><span class="p">(</span>
+        <span class="n">directories</span><span class="p">,</span> 
+        <span class="n">tomogram_regex</span><span class="p">,</span> 
+        <span class="p">[</span><span class="n">flagellum_regex</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s2">&quot;Flagellar Motor&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">tomograms</span> <span class="o">+=</span> <span class="n">these_tomograms</span>
+
+    <span class="c1"># Pseudomonas</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/grphome/grp_tomo_db1_d2/nobackup/archive/TomoDB1_d2/FlagellarMotor_P2/Pseudomonasaeruginosa/done&quot;</span>
+    <span class="n">dir_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;ab\d</span><span class="si">{4}</span><span class="s2">.*&quot;</span><span class="p">)</span>
+    <span class="n">directories</span> <span class="o">=</span> <span class="n">seek_dirs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">dir_regex</span><span class="p">)</span>
+
+    <span class="n">flagellum_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^FM\.mod$&quot;</span><span class="p">)</span>
+    <span class="n">tomogram_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;.*SIRT_1k\.rec$&quot;</span><span class="p">)</span>
+
+    <span class="n">these_tomograms</span> <span class="o">=</span> <span class="n">seek_annotated_tomos</span><span class="p">(</span>
+        <span class="n">directories</span><span class="p">,</span> 
+        <span class="n">tomogram_regex</span><span class="p">,</span> 
+        <span class="p">[</span><span class="n">flagellum_regex</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s2">&quot;Flagellar Motor&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">tomograms</span> <span class="o">+=</span> <span class="n">these_tomograms</span>
+
+    <span class="c1"># Proteus_mirabilis</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/grphome/grp_tomo_db1_d2/nobackup/archive/TomoDB1_d2/FlagellarMotor_P2/Proteus_mirabilis&quot;</span>
+    <span class="n">dir_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;qya\d</span><span class="si">{4}</span><span class="s2">.*&quot;</span><span class="p">)</span>
+    <span class="n">directories</span> <span class="o">=</span> <span class="n">seek_dirs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">dir_regex</span><span class="p">)</span>
+
+    <span class="n">flagellum_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^FM\.mod$&quot;</span><span class="p">)</span>
+    <span class="n">tomogram_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;.*\.rec$&quot;</span><span class="p">)</span>
+
+    <span class="n">these_tomograms</span> <span class="o">=</span> <span class="n">seek_annotated_tomos</span><span class="p">(</span>
+        <span class="n">directories</span><span class="p">,</span> 
+        <span class="n">tomogram_regex</span><span class="p">,</span> 
+        <span class="p">[</span><span class="n">flagellum_regex</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s2">&quot;Flagellar Motor&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">tomograms</span> <span class="o">+=</span> <span class="n">these_tomograms</span>
+
+    <span class="c1"># ~~~ DRIVE 3 ~~~ #</span>
+    <span class="c1"># Bdellovibrio</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/grphome/grp_tomo_db1_d3/nobackup/archive/TomoDB1_d3/jhome_extra/Bdellovibrio_YW&quot;</span>
+    <span class="n">dir_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;yc\d</span><span class="si">{4}</span><span class="s2">.*&quot;</span><span class="p">)</span>
+    <span class="n">directories</span> <span class="o">=</span> <span class="n">seek_dirs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">dir_regex</span><span class="p">)</span>
+
+    <span class="n">flagellum_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^flagellum_SIRT_1k\.mod$&quot;</span><span class="p">)</span>
+    <span class="n">tomogram_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;.*SIRT_1k\.rec$&quot;</span><span class="p">)</span>
+
+    <span class="n">these_tomograms</span> <span class="o">=</span> <span class="n">seek_annotated_tomos</span><span class="p">(</span>
+        <span class="n">directories</span><span class="p">,</span> 
+        <span class="n">tomogram_regex</span><span class="p">,</span> 
+        <span class="p">[</span><span class="n">flagellum_regex</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s2">&quot;Flagellar Motor&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">tomograms</span> <span class="o">+=</span> <span class="n">these_tomograms</span>
+
+    <span class="c1"># Azospirillum</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/grphome/grp_tomo_db1_d3/nobackup/archive/TomoDB1_d3/jhome_extra/AzospirillumBrasilense/done&quot;</span>
+    <span class="n">dir_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;ab\d</span><span class="si">{4}</span><span class="s2">.*&quot;</span><span class="p">)</span>
+    <span class="n">directories</span> <span class="o">=</span> <span class="n">seek_dirs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">dir_regex</span><span class="p">)</span>
+
+    <span class="n">flagellum_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^FM3\.mod$&quot;</span><span class="p">)</span>
+    <span class="n">tomogram_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;.*SIRT_1k\.rec$&quot;</span><span class="p">)</span>
+
+    <span class="n">these_tomograms</span> <span class="o">=</span> <span class="n">seek_annotated_tomos</span><span class="p">(</span>
+        <span class="n">directories</span><span class="p">,</span> 
+        <span class="n">tomogram_regex</span><span class="p">,</span> 
+        <span class="p">[</span><span class="n">flagellum_regex</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s2">&quot;Flagellar Motor&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">tomograms</span> <span class="o">+=</span> <span class="n">these_tomograms</span>
+
+    <span class="c1"># ~~~ ZHIPING ~~~ #</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/grphome/fslg_imagseg/nobackup/archive/zhiping_data/caulo_WT/&quot;</span>
+    <span class="n">dir_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;rrb\d</span><span class="si">{4}</span><span class="s2">.*&quot;</span><span class="p">)</span>
+    <span class="n">directories</span> <span class="o">=</span> <span class="n">seek_dirs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">dir_regex</span><span class="p">)</span>
+
+    <span class="n">flagellum_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^flagellum\.mod$&quot;</span><span class="p">)</span>
+    <span class="n">tomogram_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;.*\.rec$&quot;</span><span class="p">)</span>
+
+    <span class="n">these_tomograms</span> <span class="o">=</span> <span class="n">seek_annotated_tomos</span><span class="p">(</span>
+        <span class="n">directories</span><span class="p">,</span> 
+        <span class="n">tomogram_regex</span><span class="p">,</span> 
+        <span class="p">[</span><span class="n">flagellum_regex</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s2">&quot;Flagellar Motor&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">tomograms</span> <span class="o">+=</span> <span class="n">these_tomograms</span>
+
+    <span class="k">return</span> <span class="n">tomograms</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="tomograms.supercomputer_utils.seek_annotated_tomos" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">seek_annotated_tomos</span><span class="p">(</span><span class="n">directories</span><span class="p">,</span> <span class="n">tomo_regex</span><span class="p">,</span> <span class="n">annotation_regexes</span><span class="p">,</span> <span class="n">annotation_names</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Collect pairs of tomogram files and their corresponding annotation files.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>directories</code></b>
+                  (<code>list of str</code>)
+              –
+              <div class="doc-md-description">
+                <p>List of directories to search for tomograms</p>
+              </div>
+            </li>
+            <li>
+              <b><code>tomo_regex</code></b>
+                  (<code><span title="re.Pattern">Pattern</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>The regex pattern to match tomogram filenames.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>annotation_regexes</code></b>
+                  (<code>list of re.Pattern</code>)
+              –
+              <div class="doc-md-description">
+                <p>A list of regex patterns to</p>
+              </div>
+            </li>
+            <li>
+              <b><code>annotation_names</code></b>
+                  (<code>list of str</code>)
+              –
+              <div class="doc-md-description">
+                <p>A list of names for the annotations.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><span title="typing.List">List</span>[<a class="autorefs autorefs-internal" title="tomograms.tomogram.TomogramFile" href="../tomogram/#tomograms.tomogram.TomogramFile">TomogramFile</a>]</code>
+              –
+              <div class="doc-md-description">
+                <p>TomogramFile objects with their corresponding</p>
+              </div>
+            </li>
+            <li>
+                  <code><span title="typing.List">List</span>[<a class="autorefs autorefs-internal" title="tomograms.tomogram.TomogramFile" href="../tomogram/#tomograms.tomogram.TomogramFile">TomogramFile</a>]</code>
+              –
+              <div class="doc-md-description">
+                <p>annotations.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+            <details class="quote">
+              <summary>Source code in <code>tomograms/supercomputer_utils.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">seek_annotated_tomos</span><span class="p">(</span>
+            <span class="n">directories</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> 
+            <span class="n">tomo_regex</span><span class="p">:</span> <span class="n">re</span><span class="o">.</span><span class="n">Pattern</span><span class="p">,</span> 
+            <span class="n">annotation_regexes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">Pattern</span><span class="p">],</span> 
+            <span class="n">annotation_names</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">TomogramFile</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Collect pairs of tomogram files and their corresponding annotation files.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        directories (list of str): List of directories to search for tomograms</span>
+<span class="sd">        and annotations.</span>
+
+<span class="sd">        tomo_regex (re.Pattern): The regex pattern to match tomogram filenames.</span>
+
+<span class="sd">        annotation_regexes (list of re.Pattern): A list of regex patterns to</span>
+<span class="sd">        match annotation filenames.</span>
+
+<span class="sd">        annotation_names (list of str): A list of names for the annotations.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        TomogramFile objects with their corresponding</span>
+<span class="sd">        annotations.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">tomos</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="nb">dir</span> <span class="ow">in</span> <span class="n">directories</span><span class="p">:</span>
+        <span class="n">matches</span> <span class="o">=</span> <span class="n">seek_set</span><span class="p">(</span><span class="nb">dir</span><span class="p">,</span> <span class="p">[</span><span class="n">tomo_regex</span><span class="p">]</span> <span class="o">+</span> <span class="n">annotation_regexes</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">matches</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="kc">None</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
+            <span class="n">tomogram_file</span> <span class="o">=</span> <span class="n">matches</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">annotation_files</span> <span class="o">=</span> <span class="n">matches</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="n">annotations</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">annotation_files</span><span class="p">,</span> <span class="n">annotation_names</span><span class="p">):</span>
+                <span class="n">annotations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">AnnotationFile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
+            <span class="n">tomo</span> <span class="o">=</span> <span class="n">TomogramFile</span><span class="p">(</span><span class="n">tomogram_file</span><span class="p">,</span> <span class="n">annotations</span><span class="p">,</span> <span class="n">load</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">tomos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tomo</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">tomos</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="tomograms.supercomputer_utils.seek_dirs" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">seek_dirs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">regex</span><span class="p">,</span> <span class="n">directories</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Search for directories matching the given regex recursively within the
+specified root directory.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>root</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The root directory to start the search.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>regex</code></b>
+                  (<code><span title="re.Pattern">Pattern</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>The regex pattern to match the directory names.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>directories</code></b>
+                  (<code>list</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>A list to accumulate matched directories.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><span title="typing.Union">Union</span>[<span title="typing.List">List</span>[str], None]</code>
+              –
+              <div class="doc-md-description">
+                <p>A list of paths of matching directories.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+            <details class="quote">
+              <summary>Source code in <code>tomograms/supercomputer_utils.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">seek_dirs</span><span class="p">(</span>
+            <span class="n">root</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> 
+            <span class="n">regex</span><span class="p">:</span> <span class="n">re</span><span class="o">.</span><span class="n">Pattern</span><span class="p">,</span> 
+            <span class="n">directories</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Search for directories matching the given regex recursively within the</span>
+<span class="sd">    specified root directory.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        root (str): The root directory to start the search.</span>
+
+<span class="sd">        regex (re.Pattern): The regex pattern to match the directory names.</span>
+
+<span class="sd">        directories (list, optional): A list to accumulate matched directories.</span>
+<span class="sd">        Should not be set in general usage, as this is used only for internal</span>
+<span class="sd">        recursion. Defaults to None.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A list of paths of matching directories.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">directories</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">directories</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+        <span class="k">for</span> <span class="nb">dir</span> <span class="ow">in</span> <span class="n">dirs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">regex</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="nb">dir</span><span class="p">):</span>
+                <span class="n">directories</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="nb">dir</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">directories</span> <span class="o">=</span> <span class="n">seek_dirs</span><span class="p">(</span><span class="nb">dir</span><span class="p">,</span> <span class="n">regex</span><span class="p">,</span> <span class="n">directories</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">directories</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="tomograms.supercomputer_utils.seek_file" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">seek_file</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">regex</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Search for a file matching the given regex recursively in the specified
+directory.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>directory</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The root directory to start the search. regex</p>
+              </div>
+            </li>
+            <li>
+              <b><code>(re.Pattern)</code></b>
+              –
+              <div class="doc-md-description">
+                <p>The regex pattern to match the filenames.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><span title="typing.Union">Union</span>[str, None]</code>
+              –
+              <div class="doc-md-description">
+                <p>The full path of the matching file, or None if no match is</p>
+              </div>
+            </li>
+            <li>
+                  <code><span title="typing.Union">Union</span>[str, None]</code>
+              –
+              <div class="doc-md-description">
+                <p>found.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+            <details class="quote">
+              <summary>Source code in <code>tomograms/supercomputer_utils.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">seek_file</span><span class="p">(</span><span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">regex</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">Pattern</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Search for a file matching the given regex recursively in the specified</span>
+<span class="sd">    directory.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        directory (str): The root directory to start the search. regex</span>
+<span class="sd">        (re.Pattern): The regex pattern to match the filenames.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The full path of the matching file, or None if no match is</span>
+<span class="sd">        found.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">regex</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+        <span class="k">for</span> <span class="nb">dir</span> <span class="ow">in</span> <span class="n">dirs</span><span class="p">:</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">seek_file</span><span class="p">(</span><span class="nb">dir</span><span class="p">,</span> <span class="n">regex</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">target</span>
+    <span class="k">return</span> <span class="kc">None</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="tomograms.supercomputer_utils.seek_set" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">seek_set</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">regexes</span><span class="p">,</span> <span class="n">matches</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Recursively search the specified directory for exactly one match for each regex in the list.</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>directory</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The directory to search.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>regexes</code></b>
+                  (<code>list of re.Pattern</code>)
+              –
+              <div class="doc-md-description">
+                <p>A list of regex patterns to match filenames.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>matches</code></b>
+                  (<code>list</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>A list to accumulate matches. Should not be</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><span title="typing.Union">Union</span>[<span title="typing.List">List</span>[str], None]</code>
+              –
+              <div class="doc-md-description">
+                <p>A list of matching file paths or None if extra matches are found.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+            <details class="quote">
+              <summary>Source code in <code>tomograms/supercomputer_utils.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">seek_set</span><span class="p">(</span>
+            <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> 
+            <span class="n">regexes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">Pattern</span><span class="p">],</span> 
+            <span class="n">matches</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Recursively search the specified directory for exactly one match for each regex in the list.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        directory (str): The directory to search.</span>
+
+<span class="sd">        regexes (list of re.Pattern): A list of regex patterns to match filenames.</span>
+
+<span class="sd">        matches (list, optional): A list to accumulate matches. Should not be</span>
+<span class="sd">        set in general usage, as this is used only for internal recursion.</span>
+<span class="sd">        Defaults to None.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A list of matching file paths or None if extra matches are found.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">matches</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">matches</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">regexes</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">r_idx</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">regexes</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">matches</span><span class="p">[</span><span class="n">r_idx</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">matches</span><span class="p">[</span><span class="n">r_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="kc">None</span>  <span class="c1"># Extra match found</span>
+    <span class="k">return</span> <span class="n">matches</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../subtomogram/" class="btn btn-neutral float-left" title="Subtomogram"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/mward19/tomograms" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../subtomogram/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
