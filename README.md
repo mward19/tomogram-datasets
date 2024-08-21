@@ -5,8 +5,11 @@ Researchers have spent a lot of time looking for structures in these tomograms, 
 This repository contains code that makes it easier to navigate the web of tomograms and annotations we have,
 simplifying analysis and dataset creation.
 
-# Installation
+## Installation
 Install with pip:
 ```shell
 pip install git+https://github.com/mward19/tomograms.git
 ```
+
+## Documentation
+Read the documentation at [](https://mward19.github.io/tomograms/)
