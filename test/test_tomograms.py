@@ -51,14 +51,14 @@ def test_annotation_points(sample_tomo):
     )
 
 def test_mrc_to_np():
-    file_1 = "data/mba2011-04-12-1.mrc" # https://cryoetdataportal.czscience.com/runs/10132
+    file_1 = "test/data/mba2011-04-12-1.mrc" # https://cryoetdataportal.czscience.com/runs/10132
     # TODO: Portal says it's 318x319x109. Why 318 319 switch?
     array_1 = tomograms.TomogramFile.mrc_to_np(file_1)
     assert isinstance(array_1, np.ndarray)
     assert np.allclose(array_1.shape, (109, 319, 318))
 
 def test_process():
-    file_1 = "data/mba2011-04-12-1.mrc" # https://cryoetdataportal.czscience.com/runs/10132
+    file_1 = "test/data/mba2011-04-12-1.mrc" # https://cryoetdataportal.czscience.com/runs/10132
     tomo = tomograms.TomogramFile(file_1)
     
     # Alter some data to ensure that the processing does something
@@ -71,7 +71,7 @@ def test_process():
     assert not np.allclose(tomo.data, orig_data)
 
 def test_reload():
-    file_1 = "data/mba2011-04-12-1.mrc" # https://cryoetdataportal.czscience.com/runs/10132
+    file_1 = "test/data/mba2011-04-12-1.mrc" # https://cryoetdataportal.czscience.com/runs/10132
     tomo = tomograms.TomogramFile(file_1)
     
     # Alter some data to ensure that the processing does something
