@@ -135,7 +135,7 @@ def all_fm_tomograms() -> List[TomogramFile]:
     
     return tomograms
 
-def seek_file(directory: str, regex: List[re.Pattern]) -> Union[str, None]:
+def seek_file(directory: str, regex: re.Pattern) -> Union[str, None]:
     """Search for a file matching the given regex recursively in the specified
     directory.
 
@@ -156,6 +156,36 @@ def seek_file(directory: str, regex: List[re.Pattern]) -> Union[str, None]:
             if target is not None:
                 return target
     return None
+
+def seek_files(
+        directory: str, 
+        regex: re.Pattern, 
+        files: Optional[List[str]] = None
+    ) -> List[str]:
+    """Search for all files matching the given regex recursively in the specified
+    directory.
+
+    Args:
+        directory (str): The root directory to start the search. 
+        
+        regex (re.Pattern): The regex pattern to match the filenames.
+
+        files (list, optional): A list to accumulate matched files.
+        Should not be set in general usage, as this is used only for internal
+        recursion. Defaults to None.
+
+    Returns:
+        A list of the full paths of each matching file.
+    """
+    if files is None:
+        files = []
+    for root, dirs, dir_files in os.walk(directory):
+        for dir_file in dir_files:
+            if regex.match(dir_file):
+                files.append(os.path.join(root, dir_file))
+        for dir in dirs:
+            files = seek_files(os.path.join(root, dir), regex, files)
+    return files
 
 def seek_dirs(
             root: str, 
@@ -179,10 +209,10 @@ def seek_dirs(
     """
     if directories is None:
         directories = []
-    for root, dirs, _ in os.walk(root):
+    for this_root, dirs, _ in os.walk(root):
         for dir in dirs:
             if regex.match(dir):
-                directories.append(os.path.join(root, dir))
+                directories.append(os.path.join(this_root, dir))
             else:
                 directories = seek_dirs(dir, regex, directories)
     return directories
@@ -256,15 +286,3 @@ def seek_annotated_tomos(
     return tomos
 
 
-
-if __name__ == "__main__":
-    # Run this to see annotations
-    tomos = all_fm_tomograms()
-    for tomo in tomos:
-        print(tomo.filepath)
-        for annotation in tomo.annotations:
-            print(annotation.filepath)
-            print(annotation.name)
-            for point in annotation.points:
-                print(point)
-        print()

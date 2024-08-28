@@ -5,7 +5,7 @@ import numpy as np
 
 from typing import List, Optional
 
-def in_bounds(shape: np.ndarray, point: np.ndarray) -> bool:
+def _in_bounds(shape: np.ndarray, point: np.ndarray) -> bool:
     """ 
     Checks if the `point` is within the bounds of an array with the given
     `shape`.
@@ -60,7 +60,7 @@ class Subtomogram(Tomogram):
             for point in parent_annotation.points:
                 new_point = point - lower_bounds
                 # Check if new_point is even in the new tomogram
-                if in_bounds(shape, new_point):
+                if _in_bounds(shape, new_point):
                     new_points.append(new_point)
                 # Otherwise continue
             # Add the annotation only if there are points in it
@@ -190,7 +190,7 @@ class SubtomogramGenerator:
             contains_annotation = False
             for point in self.tomogram.annotation_points():
                 new_point = point - lower_bounds
-                if in_bounds(self.vol_shape, new_point):
+                if _in_bounds(self.vol_shape, new_point):
                     contains_annotation = True
                     break
             
